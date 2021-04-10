@@ -16,7 +16,7 @@
 
 solocp_single<-function(y,sigma,q=0.1,tau2=NULL,tau2.spike=NULL,tau2.slab=NULL){
 
-  sigma <- sigma^2
+  sigma2 <- sigma^2
   n<-length(y)
   grid <- seq(1,n)
   n.grid <- length(grid)-1
