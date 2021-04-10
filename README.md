@@ -23,7 +23,7 @@ Installation
 Vignettes
 ---------
 
-1.  [Vignette coming soon](https://github.com/lorenzocapp/adapref/blob/master/vignettes/Adaptive_prefsamp.Rmd): A short tutorial to describe the basics functioning of the package (Link will change).
+1.  [solocp_simulated_data](https://github.com/lorenzocapp/solocp/blob/main/vignettes/solocp_vignette.Rmd): A short tutorial to describe the basics functioning of the package (Link will change).
 
 References
 ----------
