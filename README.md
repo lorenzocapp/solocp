@@ -32,7 +32,6 @@ References
 
 
 Numerical Experiments in the Manuscript
-
 ----------
 
 The draft includes several numerical experiments. These can be found at this [link](https://github.com/lorenzocapp/solocp_experiments). While they are based on the same methodology, they rely on a less user-friendly implementation of the functions included in this package. 
