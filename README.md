@@ -10,7 +10,7 @@ solocp includes a fast Bayesian change point detection methodology based on spik
 Installation
 ------------
 
-1.  Install the package `devtool'
+1.  Install the package `devtools`
 
 2.  Load `devtools` using `library(devtools)`.
 
