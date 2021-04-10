@@ -14,17 +14,17 @@
 #' @export
 
 
-solocp_single<-function(y,sigma2,q=1,tau2=NULL,tau2.spike=NULL,tau2.slab=NULL){
+solocp_single<-function(y,sigma,q=0.1,tau2=NULL,tau2.spike=NULL,tau2.slab=NULL){
 
-
+  sigma <- sigma^2
   n<-length(y)
   grid <- seq(1,n)
   n.grid <- length(grid)-1
   n1<-rep(1,n.grid+1)
 
-  if (tau2==NULL){ tau2=2/sqrt(n)}
-  if (ta2.spike==NULL){tau2.spike=1/n}
-  if (tau2.slab==NULL){tau2.slab=n}
+  if (is.null(tau2)){ tau2=2/sqrt(n)}
+  if (is.null(tau2.spike)){tau2.spike=1/n}
+  if (is.null(tau2.slab)){tau2.slab=n}
 
   weight<-matrix(1,nrow=n.grid+1,ncol=n.grid+1)
 

@@ -1,0 +1,84 @@
+---
+title: "solo_cp_change_point_detection_with_simulated_data"
+author: "Lorenzo Cappello"
+date: "April 10, 2021"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Adaptive_preferential_sampling_with_simulated_data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(solocp)
+```
+
+We sample some data
+
+```{r}
+
+set.seed(123)
+
+  n <- 271
+  sigma <- 0.1
+  change.points <- c(31,61,91,121,151,181,211,241)
+  true.change.points <- change.points
+  change.points <- c(1,change.points,n+1)
+  level <- c(0, 1, 0, 1, 0,1,0,1,0)
+  level <- level - level[1]
+  meanvec<-rep(level,diff(change.points))
+  y <-c()
+  for (i in meanvec){ y<- c(y,rnorm(1,i,sigma))}
+  x <- seq(1,n)/n
+
+```
+
+
+We plot the data along with the true test signal (red)
+```{r}
+fun <- stepfun(change.points,c(0,level,0))
+plot(y)
+lines(fun(seq(1,n)),col="red",lwd=2)
+```
+
+We now apply the solocp algorithm. solocp_single computes the marginal inclusion probability.
+subset_changepoints removes consecutive change points (it corresponds to point 2-4 in Algorithm 1 in the manuscript)
+
+Here we assume to know the standard deviation (sigma). Otherwise it is needs to be given as an input.
+
+Note, we are using the input default parameters (q, tau2, tau2.spike,tau2.slab). If not they need to be specified in solocp_single (see below)
+```{r}
+solo <- solocp_single(y,sigma)
+cp <- subset_changepoints(solo$ratio,del=5)
+```
+
+Plot the results
+```{r}
+plot(y)
+abline(v=cp,lwd=2,col="red")
+```
+Now we use solo.cp using our own input parameter
+
+```{r}
+q=0.1
+tau2=2/n
+tau2.slab=n
+tau2.spike=1/n
+solo1 <- solocp_single(y,sigma,q=q,tau2=tau2,tau2.spike=tau2.spike,tau2.slab = tau2.slab)
+cp1 <- subset_changepoints(solo1$ratio,del=5)
+```
+
+And plot again the results 
+
+```{r}
+plot(y)
+abline(v=cp1,lwd=2,col="red")
+```
+
