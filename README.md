@@ -5,7 +5,7 @@ solocp
 
 <!-- badges: start -->
 <!-- badges: end -->
-The goal of solocp is to complement the Bayesian change point detection methodology that is based on spike and slab priors.
+solocp includes a fast Bayesian change point detection methodology based on spike and slab priors.
 
 Installation
 ------------
@@ -29,3 +29,10 @@ References
 ----------
 
 1.  Coming soon
+
+
+Numerical Experiments in the Manuscript
+
+----------
+
+The draft includes several numerical experiments. These can be found at this [link](https://github.com/lorenzocapp/solocp_experiments). While they are based on the same methodology, they rely on a less user-friendly implementation of the functions included in this package. 
