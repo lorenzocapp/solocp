@@ -110,3 +110,10 @@ solocp_single<-function(y,sigma,q=0.1,tau2=NULL,tau2.spike=NULL,tau2.slab=NULL){
 }
 
 
+
+
+revcumsum <- function(x){
+  return(rev(cumsum(rev(x))))
+}
+
+
