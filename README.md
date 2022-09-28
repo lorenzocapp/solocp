@@ -23,12 +23,12 @@ Installation
 Vignettes
 ---------
 
-1.  [solocp_simulated_data](https://github.com/lorenzocapp/solocp/blob/main/vignettes/solocp_vignette.Rmd): A short tutorial to describe the basics functioning of the package (Link will change).
+1.  [solocp_simulated_data](https://github.com/lorenzocapp/solocp/blob/main/vignettes/solocp_vignette.Rmd): A short tutorial to describe the basics functioning of the package.
 
 References
 ----------
 
-1.  Coming soon
+1.  Cappello, L., Madrid Padilla, O. H., Palacios, J. A. (2022), Bayesian change point detection with spike and slab priors. [arXiv](https://arxiv.org/abs/2106.10383)
 
 
 Numerical Experiments in the Manuscript
